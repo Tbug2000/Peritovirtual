@@ -7,7 +7,7 @@ import { Casa } from '../Casa';
 })
 export class ConexionService {
   precio: number = 0;
-  url:string = 'http://GeraltRivia1.pythonanywhere.com/predecir_precio'
+  url:string = 'https://GeraltRivia1.pythonanywhere.com/predecir_precio'
   constructor(public http:HttpClient) { 
 
   }
