@@ -1,0 +1,59 @@
+.Formulario {
+    width: 50%;
+    margin-left: 5%;
+    top:40%;
+    position:absolute;
+}
+mat-form-field{
+    width: 35%;
+    margin-right: 2.5%;
+}
+mat-label{
+    font-size: 75%;
+    color:black;
+    font-family: Tahoma;
+}
+.Calcular{
+    width: 35%;
+    background-image: url("/assets/imagenes/Cerebero.png") ;
+    font-size: 130%;
+    font-style: italic;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    line-height: 280%;
+    height: auto;
+    
+}
+.Calcular:hover{
+    background-image: url("/assets/imagenes/Cerebero_C.png") ;
+}
+.iconobanos{
+    width: 5%;
+    top: 7%;
+    left: 60%;
+    position: absolute;
+}
+.iconoestrato{
+    width: 5%;
+    top: 7%;
+    left: 23%;
+    position: absolute;
+}
+.iconohab{
+    width: 5%;
+    top: 40%;
+    left: 23%;
+    position: absolute;
+}
+.iconoesta{
+    width: 5%;
+    top: 40%;
+    left: 60%;
+    position: absolute;
+}
+.iconomed{
+    width: 5%;
+    top: 73%;
+    left: 23%;
+    position: absolute;
+}

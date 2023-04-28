@@ -1,0 +1,52 @@
+<div class="Formulario">
+  <form  [formGroup]="Datacasa" (ngSubmit)="Enviar()">
+    <div class="Row">
+      <img class ="iconobanos" src="/assets/imagenes/bano-publico.png">
+      <img class ="iconoestrato" src="/assets/imagenes/grafico-de-barras.png">
+      <mat-form-field class="Estrato" appearance="outline">
+        <mat-label>Estrato</mat-label>
+        <mat-select formControlName="Estrato">
+          <mat-option *ngFor="let Estrato of Estratos" [value]="Estrato">
+            {{Estrato}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="Baños" appearance="outline">
+        <mat-label>Baños</mat-label>
+        <mat-select formControlName="Baños">
+          <mat-option *ngFor="let Bano of Banos" [value]="Bano">
+            {{Bano}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="Row">
+      <img class ="iconoesta" src="/assets/imagenes/antigua-grecia.png">
+      <img class ="iconohab" src="/assets/imagenes/cama.png">
+      <mat-form-field class="Habitaciones" appearance="outline">
+        <mat-label>Habitaciones</mat-label>
+        <mat-select formControlName="bhk">
+          <mat-option *ngFor="let Habitaciones of Habitaciones" [value]="Habitaciones">
+            {{Habitaciones}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="Estado" appearance="outline">
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="Estado">
+          <mat-option *ngFor="let Estado of Estados" [value]="Estado">
+            {{Estado}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="Row">
+      <img class ="iconomed" src="/assets/imagenes/medida.png">
+      <mat-form-field class="m^2" appearance="outline">
+        <mat-label>M^2</mat-label>
+        <input formControlName="m2" matInput type="number">
+      </mat-form-field>
+      <button   [disabled]="!Datacasa.valid" class='Calcular' mat-raised-button type="submit" >Calcular</button>
+    </div>
+  </form>
+</div>
