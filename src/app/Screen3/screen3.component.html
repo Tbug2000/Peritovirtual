@@ -1,2 +1,33 @@
 
-<p>{{Preciocasa}}</p>
+<p class="titulo">{{Preciohtml}}</p>
+<p class="etiqueta">*SMLV - Salario minimo legal vigente</p>
+<div class="Advertencia">
+    <p class="Titulo_at">Atencion !</p>
+    <p class="Texto_at">Un modelo de valoración de casas puede ser una herramienta útil para guiar la toma de decisiones,
+    pero debe utilizarse en conjunto con otras consideraciones relevantes para hacer una evaluación completa y precisa.</p>
+    <img class="Imagen_at" src="/assets/imagenes/casa.jpg" alt="image">
+</div>
+<button class="regresar" mat-raised-button (click)="regresar()">Regresar</button>
+<table class="detalles_casa">
+    <th colspan="2">Datos de la casa:</th>
+    <tr>
+        <td>Baños</td>
+        <td class="detalles_casa">{{banos}}</td>
+    </tr>
+    <tr>
+        <td>Estrato</td>
+        <td class="detalles_casa">{{Casa.Estrato}}</td>
+    </tr>
+    <tr>
+        <td>M^2</td>
+        <td class="detalles_casa">{{Casa.m2}}</td>
+    </tr>
+    <tr>
+        <td>Habitaciones</td>
+        <td class="detalles_casa">{{Casa.bhk}}</td>
+    </tr>
+    <tr>
+        <td>Estado</td>
+        <td class="detalles_casa">{{Casa.Estado}}</td>
+    </tr>
+</table>

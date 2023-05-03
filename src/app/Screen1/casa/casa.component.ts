@@ -163,7 +163,9 @@ export class CasaComponent implements OnInit,AfterViewInit {
     this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas });
     this.renderer.setPixelRatio(devicePixelRatio);
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
+    
     let component: CasaComponent = this;
+    component.scene.background = new THREE.Color( 0xFFFBFD );
     (function render() {
       component.renderer.render(component.scene, component.camera);
       requestAnimationFrame(render);

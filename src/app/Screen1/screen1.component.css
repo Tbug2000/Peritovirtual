@@ -13,3 +13,12 @@
     height: 10%;
     border-radius:0px 0px 50px 50px;
 }
+.tapar{
+    left:50%;
+    background-color: rgb(178, 154, 94);
+    position: absolute;
+    width: 50%;
+    height: 90%;
+    border-radius:0px 50px 0px 50px;
+    
+}

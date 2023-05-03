@@ -1,5 +1,95 @@
-p{
-    margin-top:25%;
+/* Precio */
+.titulo{
+    left: 3.5%;
+    top: 5%;
+    font-size: calc(5vh + 5vw);
+    font-family: 'Montagu Slab', serif;
+    font-style: bold;
+    color: #6F6F6F;
+    position: absolute;
+    margin:0;
+}
+.etiqueta{
+    left: 4.5%;
+    top: 30%;
+    font-size: calc(0.6vh + 0.6vw);
+    font-family: 'Montagu Slab', serif;
+    margin:0;
+    color: #6F6F6F;
+    position: absolute;
+}
+/* Atencion Y Imagen */
+.Advertencia{
+    height: 30%;
+    border-color: black;
+    border-style: solid;
+    border-width: thin;
+    width: 91%;
+    top: 50%;
+    left: 4.5%;
+    position: absolute;
+}
+p.Titulo_at{
+    font-size: calc(0.68vh + 0.68vw);
+    font-family: 'Montagu Slab';
+    width: 68%;
+    text-align: justify;
+    left: 3%;
+    position: absolute;
+    margin: 0;
+    top: 5%;
+    color: #6F6F6F;
+}
+p.Texto_at{
+    margin: 0;
+    font-size: calc(0.55vh + 0.55vw);
+    font-family: 'Montagu Slab';
+    width: 60%;
+    text-align: justify;
+    left: 4%;
+    position: absolute;
+    top: 22%;
+}
+.Imagen_at{
+    position: absolute;
+    width: 25%;
+    top: 3%;
+    height: 94%;
+    left: 73%;
+}
+/* Boton Regresar */
+.regresar{
+    position: absolute;
+    top:87%;
+    height: 5%;
+    width: 20%;
+    left: 40%;
+}
+/* Datos Casa */
+table.detalles_casa{
+    margin: 0;
+    left: 75%;
+    position: absolute;
+    top: 10.8%;
+}
+td.detalles_casa {
     text-align: center;
-    font-size: 150px;
+    padding: 0px;
+    margin: 0px;
+    font-size: calc(0.5vh + 0.5vw);
+    font-family: 'Montagu Slab';
+}
+td{
+    padding: 0px 0px 0.5% 7px;
+    margin: 0px;
+    font-size: calc(0.5vh + 0.5vw);
+    font-family: 'Montagu Slab';
+}
+th{
+    color: #6F6F6F;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    font-size: calc(0.68vh + 0.68vw);
+    font-family: 'Montagu Slab', serif;
 }

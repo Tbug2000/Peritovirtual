@@ -8,11 +8,13 @@ import { Casa } from '../Casa';
 export class ConexionService {
   precio: number = 0;
   url:string = 'https://GeraltRivia1.pythonanywhere.com/predecir_precio'
+  Casa!: Casa;
   constructor(public http:HttpClient) { 
 
   }
 
   Enviardatos(casa:Casa):Observable<any>{
+    this.Casa = casa;
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
