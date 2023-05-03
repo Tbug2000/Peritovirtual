@@ -151,7 +151,6 @@ export class CasaComponent implements OnInit,AfterViewInit {
       }
       this.y = e['screenY']
       this.x = e['screenX']
-      console.log(e['screenX'])
       //  this.model.rotation.x += -0.001
       // console.log("z: ",this.model.rotation.z,"x: ",this.model.rotation.x,"y: ",this.model.rotation.y)
       // console.log("x: ",this.model.rotation.x,"y: ",this.model.rotation.y)
