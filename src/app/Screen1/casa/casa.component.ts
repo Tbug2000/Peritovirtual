@@ -14,7 +14,8 @@ export class CasaComponent implements OnInit,AfterViewInit {
   inicio = true;
   // Start Setup 
   @ViewChild('canvas') private canvasRef!: ElementRef;
-  private get canvas(): HTMLCanvasElement { return this.canvasRef.nativeElement }
+  // private get canvas(): HTMLCanvasElement { return this.canvasRef.nativeElement }
+  canvas! : HTMLCanvasElement;
   
 
   @Input() public fieldOfView: number = 1;
@@ -159,17 +160,29 @@ export class CasaComponent implements OnInit,AfterViewInit {
 
   // Main() 3D
   private startRenderingLoop() {
-    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas });
-    this.renderer.setPixelRatio(devicePixelRatio);
+    this.canvas = this.canvasRef.nativeElement;
+    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas ,antialias:true});
+
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
     
-    let component: CasaComponent = this;
-    component.scene.background = new THREE.Color( 0xFFFBFD );
-    (function render() {
-      component.renderer.render(component.scene, component.camera);
+    // let component: CasaComponent = this;
+    // component.scene.background = new THREE.Color( 0xFFFBFD );
+    // (function render() {
+    //   component.renderer.render(component.scene, component.camera);
+    //   requestAnimationFrame(render);
+    // }());
+
+    const  render = () => {
+      this.renderer.render(this.scene, this.camera);
       requestAnimationFrame(render);
-    }());
+      let updatecanvas = document.getElementById('Casa')!;
+
+      
+    };
+    render();
+
   }
+
 
   constructor() { }
 
