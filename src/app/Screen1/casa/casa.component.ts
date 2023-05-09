@@ -14,11 +14,8 @@ export class CasaComponent implements OnInit,AfterViewInit {
   inicio = true;
   // Start Setup 
   @ViewChild('canvas') private canvasRef!: ElementRef;
-  // private get canvas(): HTMLCanvasElement { return this.canvasRef.nativeElement }
   canvas! : HTMLCanvasElement;
-  
-
-  @Input() public fieldOfView: number = 1;
+  fieldOfView: number = 1;
   private loaderGLTF = new GLTFLoader();
   private renderer!: THREE.WebGLRenderer;
   private scene!: THREE.Scene;
@@ -31,18 +28,13 @@ export class CasaComponent implements OnInit,AfterViewInit {
   // Scene Properties
   private camera!: THREE.PerspectiveCamera;
   private controls!: OrbitControls;
-  private ambientLight!: THREE.AmbientLight;
   private light1!: THREE.PointLight;
-  private light2!: THREE.PointLight;
-  private light3!: THREE.PointLight;
-  private light4!: THREE.PointLight;
-  private directionalLight!: THREE.DirectionalLight;
+
 
   // Create Controls
   private createControls = () => {
     const renderer = new CSS2DRenderer();
     renderer.setSize(1,1);
-
     document.body.appendChild(renderer.domElement);
     this.controls = new OrbitControls(this.camera, renderer.domElement);
     this.controls.update();
@@ -51,7 +43,7 @@ export class CasaComponent implements OnInit,AfterViewInit {
   //Create Scene
   private createScene() {
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color(0xFFFFFF)
+    this.scene.background = new THREE.Color(0xFFFBFD)
     this.loaderGLTF.load('assets/Final_NoAnima/Hous_Join.gltf', (gltf: GLTF) => {
       this.model = gltf.scene.children[0];
       var box = new THREE.Box3().setFromObject(this.model);
@@ -69,13 +61,10 @@ export class CasaComponent implements OnInit,AfterViewInit {
   this.camera.position.x = 20;
   this.camera.position.y = 0;
   this.camera.position.z = 90;
+  
   //Light
   const ambientLight = new THREE.AmbientLight(0xffffff  , 1.8);
   this.scene.add( ambientLight );
-
-  // const pointLight = new THREE.PointLight( 0xffffff, , );
-  // this.scene.add( pointLight );
-
   this.light1 = new THREE.PointLight(0xffffff , 1,);
   this.light1.position.set(0, 120, 200);
   this.scene.add(this.light1);
@@ -162,25 +151,12 @@ export class CasaComponent implements OnInit,AfterViewInit {
   private startRenderingLoop() {
     this.canvas = this.canvasRef.nativeElement;
     this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas ,antialias:true});
-
-    this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
-    
-    // let component: CasaComponent = this;
-    // component.scene.background = new THREE.Color( 0xFFFBFD );
-    // (function render() {
-    //   component.renderer.render(component.scene, component.camera);
-    //   requestAnimationFrame(render);
-    // }());
-
+    this.renderer.setPixelRatio(5)
     const  render = () => {
       this.renderer.render(this.scene, this.camera);
       requestAnimationFrame(render);
-      let updatecanvas = document.getElementById('Casa')!;
-
-      
     };
     render();
-
   }
 
 
@@ -194,7 +170,6 @@ export class CasaComponent implements OnInit,AfterViewInit {
     this.createScene();
     this.createControls();
     this.startRenderingLoop();
-    console.log(window.innerWidth,window.innerHeight)
   }
 
 }

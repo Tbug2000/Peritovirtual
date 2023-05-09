@@ -1,9 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 html {
     background-image: url("./assets/imagenes/Thewitcher3Imagen.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
   }
 @import url('https://fonts.googleapis.com/css2?family=Montagu+Slab&display=swap');
 html, body { height: 100%; }
